@@ -39,19 +39,19 @@ Users need to quickly find documents they are authorized to access and open them
 
 ---
 
-### User Story 3 - Share, manage, and audit documents (Priority: P3)
+### User Story 3 - Manage and audit documents (Priority: P3)
 
-Project and team stakeholders need to manage document lifecycle activities such as sharing, editing, deletion, and review without losing oversight of who accessed or changed what.
+Project and team stakeholders need a controlled way to manage document metadata, updates, and deletion while keeping the initial release focused on the core upload and access workflow.
 
-**Why this priority**: These capabilities add governance and collaboration value, but the core document upload and access workflow can still be useful without them.
+**Why this priority**: These capabilities add governance and lifecycle value, but the core document upload and access workflow can still be useful without them.
 
-**Independent Test**: A document owner or manager can share a document, update its metadata, or remove it with confirmation and the system records the action.
+**Independent Test**: A document owner or manager can update metadata or remove a document with confirmation and the system records the action.
 
 **Acceptance Scenarios**:
 
-1. **Given** a document owner shares a document with a specific user, **When** the recipient is notified, **Then** the document appears in the recipient's shared documents view.
-2. **Given** a document owner or project manager updates the document metadata or replaces the file, **When** the change is saved, **Then** the updated information is reflected in the document record.
-3. **Given** a user confirms deletion of a document they own or manage, **When** the deletion is processed, **Then** the document is removed and the activity is logged.
+1. **Given** a document owner or project manager updates the document metadata or replaces the file, **When** the change is saved, **Then** the updated information is reflected in the document record.
+2. **Given** a user confirms deletion of a document they own or manage, **When** the deletion is processed, **Then** the document is removed and the activity is logged.
+3. **Given** a document is managed through the system, **When** the action is completed, **Then** the activity is logged for later review.
 
 ---
 
@@ -75,16 +75,16 @@ Project and team stakeholders need to manage document lifecycle activities such 
 - **FR-008**: The system MUST allow authorized users to preview or download documents they can access.
 - **FR-009**: The system MUST allow document owners or authorized managers to edit document metadata and replace an uploaded file.
 - **FR-010**: The system MUST allow document owners or authorized managers to delete documents after confirmation.
-- **FR-011**: The system MUST allow documents to be shared with specific users or teams and MUST notify recipients of new shares.
+- **FR-011**: The system MUST support document management actions such as metadata updates, file replacement, and deletion for authorized users.
 - **FR-012**: The system MUST surface document activity in project, task, and dashboard experiences where relevant.
-- **FR-013**: The system MUST log document-related activities such as uploads, downloads, edits, shares, and deletions.
+- **FR-013**: The system MUST log document-related activities such as uploads, downloads, edits, and deletions.
 - **FR-014**: The system MUST remain usable in an offline training environment and support secure local storage without requiring external services.
 
 ### Assumptions
 
 - Users will continue to authenticate through the existing mock authentication workflow and existing role-based permissions will be used for document access decisions.
 - Document categories will use the predefined values provided by the stakeholder requirement unless a future change introduces a new category structure.
-- The initial release will prioritize core upload, browse, search, preview, and sharing workflows over advanced compliance reporting.
+- The initial release will prioritize core upload, browse, search, preview, and management workflows over advanced sharing and compliance reporting.
 
 ### Key Entities *(include if feature involves data)*
 
